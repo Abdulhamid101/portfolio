@@ -59,9 +59,8 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* 🔥 Simple, unique introduction (no cards) */}
         <div className={s.introWrap}>
-          <h3 className={s.introHeading}>Hi, I’m <span className={s.name}>Your Name</span>.</h3>
+          <h3 className={s.introHeading}>Hi, I’m <span className={s.name}>Kafidipe Abdul-Hamid</span>.</h3>
           <p className={s.introLead}>
             I’m a junior frontend developer who enjoys turning ideas into clean,
             responsive interfaces. I care about readable code, accessibility, and
