@@ -23,6 +23,7 @@ function useParallax(range = 10) {
 
 export default function Hero() {
   const ref = useParallax(10);
+
   return (
     <section id="home" className={s.hero}>
       <div className={s.heroIn} ref={ref}>
@@ -31,18 +32,17 @@ export default function Hero() {
           I build clean <em>React</em> interfaces with solid CSS
         </h1>
         <p className={s.subtitle}>
-          Focused on React, JavaScript, and CSS Modules. I’m exploring a little
-          <strong> Node/Express</strong> for simple APIs and auth flows.
+          Focused on React, JavaScript, and CSS Modules. Exploring a bit of{" "}
+          <strong>Node/Express</strong> for simple APIs and auth flows.
         </p>
+
         <div className={s.actions}>
           <a
             className={s.primary}
             href="#work"
             onClick={(e) => {
               e.preventDefault();
-              document
-                .getElementById("work")
-                ?.scrollIntoView({ behavior: "smooth" });
+              document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             See my projects
@@ -52,40 +52,34 @@ export default function Hero() {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" });
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             Contact me
           </a>
         </div>
 
-        <div className={s.cards}>
-          {[
-            {
-              h: "CHEF",
-              p: "Travel landing & planner built with React + CSS Modules.",
-              tag: "React",
-            },
-            {
-              h: "NEXA",
-              p: "Simple site with sections, forms, and smooth scroll.",
-              tag: "Frontend",
-            },
-            {
-              h: "TRAVELLY",
-              p: "Basic Node/Express JWT auth (learning project).",
-              tag: "Backend basics",
-            },
-          ].map((c, i) => (
-            <article key={i} className={s.card}>
-              <div className={s.cardTag}>{c.tag}</div>
-              <h3>{c.h}</h3>
-              <p>{c.p}</p>
-              <button className={s.more}>Open</button>
-            </article>
-          ))}
+        {/* 🔥 Simple, unique introduction (no cards) */}
+        <div className={s.introWrap}>
+          <h3 className={s.introHeading}>Hi, I’m <span className={s.name}>Your Name</span>.</h3>
+          <p className={s.introLead}>
+            I’m a junior frontend developer who enjoys turning ideas into clean,
+            responsive interfaces. I care about readable code, accessibility, and
+            small, tasteful motion that makes products feel alive.
+          </p>
+
+          <ul className={s.pills}>
+            <li className={s.pill}>React (Hooks)</li>
+            <li className={s.pill}>JavaScript (ES6)</li>
+            <li className={s.pill}>CSS Modules</li>
+            <li className={s.pill}>Responsive layouts</li>
+            <li className={s.pill}>Vercel / Netlify</li>
+          </ul>
+
+          <p className={s.note}>
+            Currently learning: Node/Express basics, form validation, a11y, and testing (RTL).
+          </p>
+          <p className={s.openTo}>Open to junior frontend / internship roles.</p>
         </div>
       </div>
     </section>
