@@ -1,0 +1,55 @@
+:root {
+  --ink: #e7ecf5;
+  --ink-dim: #b6c2d6;
+  --bg: #0b0e13;
+  --card: #11151c;
+  --line: #1b2230;
+  --brand: #7dd3fc;
+  --brand-2: #a78bfa;
+  --accent: #34d399;
+  --radius: 18px;
+  --maxw: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import "./tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
+.shell {
+  min-height: 100vh;
+}
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+.secHead {
+  margin-bottom: 18px;
+}
+.secHead h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  margin: 0 0 6px;
+}
+.secHead p {
+  color: var(--ink-dim);
+  margin: 0;
+}

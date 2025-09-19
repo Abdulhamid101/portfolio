@@ -1,0 +1,39 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px;
+  opacity: 0.25;
+  mask-image: radial-gradient(60% 60% at 50% 40%, #000 60%, transparent 100%);
+}
+.glowA,
+.glowB {
+  position: absolute;
+  filter: blur(70px);
+  opacity: 0.35;
+}
+.glowA {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle at 30% 30%, var(--brand), transparent 70%);
+  top: 10%;
+  left: 8%;
+}
+.glowB {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(
+    circle at 70% 40%,
+    var(--brand-2),
+    transparent 70%
+  );
+  bottom: 10%;
+  right: 6%;
+}

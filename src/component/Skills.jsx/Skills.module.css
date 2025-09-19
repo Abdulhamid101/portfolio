@@ -1,0 +1,78 @@
+/* Start with one column by default (mobile-first) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Tablet: two columns */
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: three columns */
+@media (min-width: 1060px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background: linear-gradient(180deg, #121721, #0e121a);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.card ul {
+  margin: 8px 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--ink-dim);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 10px;
+  flex-wrap: wrap; /* let long labels wrap on small screens */
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.badge {
+  font-size: 12px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: #0f141c;
+  margin-left: auto; /* pin badge to the right */
+}
+
+/* Optional: slightly tighter spacing on very small screens */
+@media (max-width: 420px) {
+  .card {
+    padding: 14px;
+  }
+  .item {
+    padding: 8px;
+  }
+}

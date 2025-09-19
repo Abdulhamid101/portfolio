@@ -1,0 +1,123 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px 20px;
+}
+.heroIn {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  transform: perspective(900px) rotateX(var(--tiltX, 0))
+    rotateY(var(--tiltY, 0));
+  transition: transform 80ms linear;
+}
+.kicker {
+  color: var(--ink-dim);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.title {
+  font-size: clamp(36px, 7vw, 72px);
+  line-height: 1.02;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+.title em {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: normal;
+}
+.subtitle {
+  color: var(--ink-dim);
+  max-width: 700px;
+  font-size: 18px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0 32px;
+}
+.primary,
+.ghost {
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.primary {
+  color: #0b0e13;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border: none;
+}
+.ghost {
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: #0e131a;
+}
+.primary:hover {
+  filter: brightness(1.05);
+}
+.ghost:hover {
+  background: #0f141c;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.card {
+  position: relative;
+  background: linear-gradient(180deg, #121721, #0e121a);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #263144;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+.cardTag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  color: var(--ink-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+.card h3 {
+  margin: 10px 0 6px;
+  font-size: 18px;
+}
+.card p {
+  margin: 0 0 10px;
+  color: var(--ink-dim);
+}
+.more {
+  appearance: none;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.more:hover {
+  background: #0f141c;
+}
+
+@media (max-width: 960px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
